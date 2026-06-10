@@ -35,7 +35,7 @@ jobs:
             public \
             package.json \
             package-lock.json \
-            next.config.js
+            next.config.mjs
 
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
