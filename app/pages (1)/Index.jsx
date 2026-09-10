@@ -79,7 +79,7 @@ export default function Index() {
   return (
     <div className={`min-h-screen bg-white text-black ${isDark ? "bg-black text-white" : "bg-white text-black"}`}>
       <div className="mx-auto flex min-h-screen w-full max-w-[1556px] flex-col items-center gap-32 px-4 py-12 sm:px-6 lg:px-8">
-        <div className="flex w-full max-w-[1200px] flex-col gap-12">
+        <div className="flex w-full max-w-[1200px] flex-col gap-8">
           <section className="mx-auto flex w-full max-w-[650px] flex-col gap-4 items-start text-left">
             <div className="flex flex-col gap-4 items-start">
               <div className="flex flex-col gap-4 items-start">
@@ -111,8 +111,8 @@ export default function Index() {
 
 function Badge({ label, isDark }) {
   return (
-    <div className={`rounded-[6px] bg-[#ECECEC] px-2 py-1 ${isDark ? "bg-white/10" : "bg-[#ECECEC]"}`}>
-      <span className={`font-inter text-[12px] font-medium tracking-[-0.12px] ${isDark ? "text-white/75" : "text-black/75"}`}>
+    <div className={`rounded-[6px] bg-[#ECECEC] px-2 ${isDark ? "bg-white/10" : "bg-[#ECECEC]"}`}>
+      <span className={`font-inter text-[12px] inline-block align-middle font-medium leading-[1.5] ${isDark ? "text-white/75" : "text-black/75"}`}>
         {label}
       </span>
     </div>
@@ -133,15 +133,15 @@ function StudyCard({ study, router }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: id * 0.05 }}
-      className="w-full max-w-[650px] mx-auto rounded-[24px] border border-black/25 p-8"
+      className="mx-auto h-[450px] w-full max-w-[650px] rounded-[24px] border border-black/25 p-8"
       style={{ backgroundColor: bg }}
     >
-      <div className="flex min-h-[450px] flex-col justify-between gap-10">
+      <div className="flex h-full flex-col justify-between gap-10">
         <div className="flex flex-col gap-4">
           <span className={`font-inter text-[13px] font-semibold uppercase tracking-[0.26px] ${textColor}`}>
             {category}
           </span>
-          <h2 className={`font-inter text-[40px] font-semibold leading-[120%] ${textColor}`}>
+          <h2 className={`font-inter max-w-[480px] text-[40px] tracking-[-2.0px] font-semibold leading-[120%] ${textColor}`}>
             {title}
           </h2>
         </div>
