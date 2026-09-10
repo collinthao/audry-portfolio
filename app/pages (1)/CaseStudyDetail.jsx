@@ -168,21 +168,23 @@ export default function CaseStudyDetail() {
             </div>
             </div>
             {/* Hero Image */}
+
+              <div className = "flex flex-col gap-16">
+            {/* Metadata */}
+            <div className = "flex flex-col gap-8">
             <div
               className="w-full max-w-[650px] rounded-2xl overflow-hidden"
               style={{ backgroundColor: study.heroBg, minHeight: "450px" }}
             >
               <div className="w-full h-[450px]" />
             </div>
-
-            {/* Metadata */}
-            <div className={`border-t pt-5 grid grid-cols-2 sm:grid-cols-4 gap-y-5 gap-x-4 ${isDark ? "border-white/10" : "border-black/10"}`}>
+            <div className={`pt-5 grid grid-cols-2 sm:grid-cols-4 gap-y-5 gap-x-4 ${isDark ? "border-white/10" : "border-black/10"}`}>
               <MetadataItem label="Role" value={study.metadata.role} isDark={isDark} />
               <MetadataItem label="Timeline" value={study.metadata.timeline} isDark={isDark} />
               <MetadataItem label="Platform" value={study.metadata.platform} isDark={isDark} />
               <MetadataItem label="Tools" value={study.metadata.tools} isDark={isDark} />
             </div>
-
+              </div>
             {/* Overview */}
             <ContentSection eyebrow="OVERVIEW" heading="Overview" headingClass="text-[32px]" isDark={isDark}>
               <p className={`font-inter text-lg font-normal leading-[150%] tracking-[-1.0px] ${isDark ? "text-white/65" : "text-black/65"}`}>
@@ -233,7 +235,7 @@ export default function CaseStudyDetail() {
             </ContentSection>
 
             {/* Solution */}
-            <ContentSection eyebrow="SOLUTION" heading={study.solution.heading}headingClass="text-[32px]" isDark={isDark}>
+            <ContentSection eyebrow="SOLUTION" heading={study.solution.heading}headingClass="text-[32px] mb-[32px]" isDark={isDark}>
               <div className="flex flex-col gap-4">
                 <PlaceholderImage height="h-[260px] sm:h-[360px]" isDark={isDark} />
                 {study.solution.paragraphs.map((p, i) => (
@@ -241,7 +243,7 @@ export default function CaseStudyDetail() {
                 ))}
               </div>
             </ContentSection>
-
+                </div>
             {/* Bottom Navigation */}
             <div className="flex items-stretch gap-3 w-full flex-col sm:flex-row pt-2">
               <button
