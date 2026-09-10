@@ -81,7 +81,7 @@ export default function Index() {
       <div className="mx-auto flex min-h-screen w-full max-w-[1556px] flex-col items-center gap-32 px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex w-full max-w-[1200px] flex-col gap-12">
           <section className="mx-auto flex w-full max-w-[650px] flex-col gap-10 items-start text-left">
-            <div className="flex flex-col gap-8 items-start">
+            <div className="flex flex-col gap-4 items-start">
               <div className="flex flex-col gap-4 items-start">
                 <h1 className="font-inter text-[40px] font-semibold leading-[120%] tracking-[-0.8px] text-black dark:text-white">
                   Adriana–Portfolio
