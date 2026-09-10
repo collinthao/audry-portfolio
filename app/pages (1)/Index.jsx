@@ -75,7 +75,7 @@ export default function Index() {
       localStorage.setItem("theme", next ? "dark" : "light");
     }
   };
-
+  
   return (
     <div className={`min-h-screen bg-white text-black ${isDark ? "bg-black text-white" : "bg-white text-black"}`}>
       <div className="mx-auto flex min-h-screen w-full max-w-[1556px] flex-col items-center gap-32 px-4 py-12 sm:px-6 lg:px-8">

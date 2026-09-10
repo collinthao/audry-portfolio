@@ -136,11 +136,11 @@ export default function CaseStudyDetail() {
     >
       <div className="mx-auto flex min-h-screen w-full max-w-[1556px] flex-col items-center gap-32 px-4 py-12 sm:px-6 lg:px-8">
         <div className="w-full max-w-[650px] flex flex-col gap-32">
-          <div className="flex justify-end">
+          <div className="flex justify-start">
             <button
               onClick={() => router.push("/")}
               aria-label="Back"
-              className={`flex items-center justify-center w-9 h-9 rounded-full border transition-colors hover:opacity-70 ${isDark ? "border-white/25 text-white" : "border-black/20 text-black"}`}
+              className={`flex items-center justify-center w-9 h-9 transition-colors hover:opacity-70 ${isDark ? "border-white/25 text-white" : "border-black/20 text-black"}`}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.667 8H3.333M3.333 8L8 12.667M3.333 8L8 3.333" stroke={isDark ? "white" : "black"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -148,24 +148,25 @@ export default function CaseStudyDetail() {
             </button>
           </div>
 
-          <div className="w-full flex flex-col gap-10">
+          <div className="w-full flex flex-col gap-8">
+
+
+            {/* Title */}
+            <div className="flex flex-col gap-2">
+            <h1 className={`font-inter text-[40px] font-semibold leading-[120%] tracking-[-2.0px] ${isDark ? "text-white" : "text-black"}`}>
+              {study.title}
+            </h1>
             {/* Tags */}
             <div className="flex items-center gap-2 flex-wrap">
               {study.tags.map((tag, i) => (
-                <span key={i} className="flex items-center gap-2">
-                  <span className={`font-inter text-xs ${isDark ? "text-white/50" : "text-black/50"}`}>{tag}</span>
-                  {i < study.tags.length - 1 && (
-                    <span className={`font-inter text-xs ${isDark ? "text-white/25" : "text-black/25"}`}>·</span>
-                  )}
+                <div key={i} className={`rounded-[6px] bg-[#ECECEC] px-2 ${isDark ? "bg-white/10" : "bg-[#ECECEC]"}`}>
+                <span className={`font-inter text-[12px] inline-block align-middle font-medium leading-[1.5] ${isDark ? "text-white/75" : "text-black/75"}`}>
+                {tag}
                 </span>
+                </div>
               ))}
             </div>
-
-            {/* Title */}
-            <h1 className={`font-inter text-2xl sm:text-3xl lg:text-4xl font-bold leading-[120%] ${isDark ? "text-white" : "text-black"}`}>
-              {study.title}
-            </h1>
-
+            </div>
             {/* Hero Image */}
             <div
               className="w-full max-w-[650px] rounded-2xl overflow-hidden"
@@ -183,30 +184,30 @@ export default function CaseStudyDetail() {
             </div>
 
             {/* Overview */}
-            <ContentSection eyebrow="OVERVIEW" heading="Overview" headingClass="text-xl sm:text-2xl" isDark={isDark}>
-              <p className={`font-inter text-sm leading-[175%] ${isDark ? "text-white/65" : "text-black/65"}`}>
+            <ContentSection eyebrow="OVERVIEW" heading="Overview" headingClass="text-[32px]" isDark={isDark}>
+              <p className={`font-inter text-lg font-normal leading-[150%] tracking-[-1.0px] ${isDark ? "text-white/65" : "text-black/65"}`}>
                 {study.overview}
               </p>
             </ContentSection>
 
             {/* The Problem */}
-            <ContentSection eyebrow="THE PROBLEM" heading={study.problem.heading} isDark={isDark}>
+            <ContentSection eyebrow="THE PROBLEM" heading={study.problem.heading} headingClass="text-[32px]" isDark={isDark}>
               <div className="flex flex-col gap-4">
                 {study.problem.paragraphs.map((p, i) => (
-                  <p key={i} className={`font-inter text-sm leading-[175%] ${isDark ? "text-white/65" : "text-black/65"}`}>{p}</p>
+                  <p key={i} className={`font-inter text-lg font-normal leading-[150%] tracking-[-1.0px] ${isDark ? "text-white/65" : "text-black/65"}`}>{p}</p>
                 ))}
               </div>
             </ContentSection>
 
             {/* My Role */}
-            <ContentSection eyebrow="MY ROLE" heading="My role & collaboration" isDark={isDark}>
-              <p className={`font-inter text-sm leading-[175%] ${isDark ? "text-white/65" : "text-black/65"}`}>
+            <ContentSection eyebrow="MY ROLE" heading="My role & collaboration"headingClass="text-[32px]" isDark={isDark}>
+              <p className={`font-inter text-lg font-normal leading-[150%] tracking-[-1.0px] ${isDark ? "text-white/65" : "text-black/65"}`}>
                 {study.role}
               </p>
             </ContentSection>
 
             {/* Research & Discovery */}
-            <ContentSection eyebrow="RESEARCH & DISCOVERY" heading={study.research.heading} isDark={isDark}>
+            <ContentSection eyebrow="RESEARCH & DISCOVERY" heading={study.research.heading}headingClass="text-[32px]" isDark={isDark}>
               <div className="flex flex-col gap-4">
                 {study.research.imageLayout === "2col-2col" ? (
                   <>
@@ -225,18 +226,18 @@ export default function CaseStudyDetail() {
                     <PlaceholderImage height="h-[220px] sm:h-[280px]" isDark={isDark} />
                   </>
                 )}
-                <p className={`font-inter text-sm leading-[175%] ${isDark ? "text-white/65" : "text-black/65"}`}>
+                <p className={`font-inter text-lg font-normal leading-[150%] tracking-[-1.0px] ${isDark ? "text-white/65" : "text-black/65"}`}>
                   {study.research.description}
                 </p>
               </div>
             </ContentSection>
 
             {/* Solution */}
-            <ContentSection eyebrow="SOLUTION" heading={study.solution.heading} isDark={isDark}>
+            <ContentSection eyebrow="SOLUTION" heading={study.solution.heading}headingClass="text-[32px]" isDark={isDark}>
               <div className="flex flex-col gap-4">
                 <PlaceholderImage height="h-[260px] sm:h-[360px]" isDark={isDark} />
                 {study.solution.paragraphs.map((p, i) => (
-                  <p key={i} className={`font-inter text-sm leading-[175%] ${isDark ? "text-white/65" : "text-black/65"}`}>{p}</p>
+                  <p key={i} className={`font-inter text-lg font-normal leading-[150%] tracking-[-1.0px] ${isDark ? "text-white/65" : "text-black/65"}`}>{p}</p>
                 ))}
               </div>
             </ContentSection>
@@ -283,7 +284,7 @@ function PlaceholderImage({ height, isDark }) {
 function MetadataItem({ label, value, isDark }) {
   return (
     <div className="flex flex-col gap-1">
-      <p className={`font-inter text-[10px] font-semibold tracking-widest uppercase ${isDark ? "text-white/40" : "text-black/40"}`}>
+      <p className={`font-inter text-[13px] font-semibold tracking-widest uppercase ${isDark ? "text-white/40" : "text-black/40"}`}>
         {label}
       </p>
       <p className={`font-inter text-sm leading-[160%] whitespace-pre-line ${isDark ? "text-white" : "text-black"}`}>
@@ -297,14 +298,24 @@ function ContentSection({ eyebrow, heading, headingClass = "text-xl sm:text-2xl"
   return (
     <div className="flex flex-col gap-4 w-full">
       <div className="flex flex-col gap-1.5">
-        <p className={`font-inter text-[10px] font-semibold tracking-widest uppercase ${isDark ? "text-white/40" : "text-black/40"}`}>
+        <p className={`font-inter text-[13px] font-semibold leading-[150%] tracking-[1.0px] uppercase ${isDark ? "text-white/50" : "text-black/50"}`}>
           {eyebrow}
         </p>
-        <h2 className={`font-inter ${headingClass} font-bold leading-[130%] ${isDark ? "text-white" : "text-black"}`}>
+        <h2 className={`font-inter ${headingClass} font-semibold tracking-[-2.0px] leading-[120%] ${isDark ? "text-white" : "text-black"}`}>
           {heading}
         </h2>
       </div>
       {children}
+    </div>
+  );
+}
+
+function Badge({ label, isDark }) {
+  return (
+    <div className={`rounded-[6px] bg-[#ECECEC] px-2 ${isDark ? "bg-white/10" : "bg-[#ECECEC]"}`}>
+      <span className={`font-inter text-[12px] inline-block align-middle font-medium leading-[1.5] ${isDark ? "text-white/75" : "text-black/75"}`}>
+        {label}
+      </span>
     </div>
   );
 }
